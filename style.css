@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+  background: radial-gradient(circle at center, #0a0a0a, #000);
+  color: #fff;
+  font-family: system-ui, sans-serif;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  gap: 15px;
+}
+
+/* title above canvas */
+#title {
+  font-size: 28px;
+  color: orange;
+  font-weight: bold;
+  margin: 0 0 8px 0;
+  text-align: center;
+}
+
+/* responsive centered canvas */
+canvas#game {
+  background-color: #000;
+  background-image:
+    linear-gradient(#111 1px, transparent 1px),
+    linear-gradient(90deg, #111 1px, transparent 1px);
+  background-size: 20px 20px;
+  border: 4px solid #f59e0b;
+  width: min(90vw, 600px);
+  /* responsive up to 600px */
+  height: auto;
+  aspect-ratio: 1 / 1;
+  /* keep square */
+  display: block;
+  touch-action: none;
+}
+
+/* controls and help are placed under the canvas */
+#controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 12px;
+  position: static;
+  /* remove fixed positioning */
+}
+
+#controls div {
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  width: 60px;
+  height: 60px;
+  font-size: 20px;
+  border-radius: 10px;
+  border: none;
+  background: orange;
+  color: black;
+  font-weight: bold;
+}
+
+/* help text below canvas */
+.help {
+  margin-top: 8px;
+  text-align: center;
+  color: #d1d5db;
+  font-size: 14px;
+  background: rgba(0, 0, 0, 0.6);
+  display: block;
+  padding: 6px 12px;
+  border-radius: 6px;
+  max-width: 600px;
+  width: min(90vw, 600px);
+}
+
+/* remove or override any absolute positioning for score/title if present */
+#score,
+#title[style] {
+  position: static;
+}
